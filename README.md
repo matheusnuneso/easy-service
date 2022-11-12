@@ -2,8 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
-Install with command "npm install -g @angular/cli"
-Check if work with "ng version"
+Install with command "npm install -g @angular/cli".
+Check if work with "ng version".
 
 ## Development server
 
