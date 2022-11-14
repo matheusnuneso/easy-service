@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
+import { LoginService } from './../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,14 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private formBuilder: NonNullableFormBuilder,
-  ) { }
+    private loginService: LoginService,
+    private formBuilder: NonNullableFormBuilder
+  ) {}
 
   ngOnInit(): void {}
 
   public onLogin(){
-    console.log(this.loginForm.value)
+    this.loginService.userLogin(this.loginForm.value);
   }
 
 }
