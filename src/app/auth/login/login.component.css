@@ -1,15 +1,14 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
+.full-width {
   width: 100%;
 }
 
-.example-full-width {
-  width: 100%;
+mat-card {
+  width: 40%;
+  margin: 5% auto;
 }
 
-.example-card {
-  max-width: 500px;
+div {
+  text-align: center;
 }
 
 
