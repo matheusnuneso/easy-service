@@ -1,3 +1,4 @@
+import { LoginService } from './auth/services/login.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,18 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'easy-service';
+
+  showToolBar : boolean = false;
+
+  constructor(private loginService: LoginService) {}
+
+  ngOnInit(){
+    this.loginService.showToolBarEmitter.subscribe(
+      show => this.showToolBar = show
+    );
+  }
+
 }

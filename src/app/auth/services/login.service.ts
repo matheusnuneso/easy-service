@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
 
@@ -8,6 +8,8 @@ import { User } from '../models/user';
 })
 export class LoginService {
   private userAuth = false;
+
+  showToolBarEmitter = new EventEmitter<boolean>();
 
   private readonly APIurl = "/assets/";
 
@@ -19,9 +21,11 @@ export class LoginService {
   userLogin(user: Partial<User>){
     if (user.password == '123456') {
       this.userAuth = true;
+      this.showToolBarEmitter.emit(true);
       this.router.navigate(['/home']);
 
     } else {
+      this.showToolBarEmitter.emit(false);
       this.userAuth = false;
     }
   }
