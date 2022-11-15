@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { Component } from '@angular/core';
 
@@ -12,7 +13,10 @@ export class AppComponent {
 
   showToolBar : boolean = false;
 
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
   ngOnInit(){
     this.loginService.showToolBarEmitter.subscribe(
@@ -20,6 +24,21 @@ export class AppComponent {
     );
   }
 
+  onLogin(){
+    this.loginService.logout();
+    this.router.navigate(['/login']);
+  }
 
+  onPerfil(){
+    console.log('perfil');
+  }
+
+  onContracts(){
+    console.log('contracts');
+  }
+
+  onServices(){
+    console.log('Services')
+  }
 
 }

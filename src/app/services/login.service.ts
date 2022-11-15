@@ -30,6 +30,10 @@ export class LoginService {
     }
   }
 
+  logout(){
+    this.showToolBarEmitter.emit(false);
+  }
+
   getUserAuth(){
     return this.userAuth;
   }

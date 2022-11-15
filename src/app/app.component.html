@@ -9,27 +9,27 @@
 
     <mat-menu #menu="matMenu">
 
-      <button *ngIf="showToolBar" mat-menu-item>
+      <button *ngIf="showToolBar" mat-menu-item (click)="onServices()">
         <mat-icon>design_services</mat-icon>
         <span>Seus serviços</span>
       </button>
 
-      <button *ngIf="showToolBar" mat-menu-item>
+      <button *ngIf="showToolBar" mat-menu-item (click)="onContracts()">
         <mat-icon>payments</mat-icon>
         <span>Seus contratos</span>
       </button>
 
-      <button *ngIf="showToolBar" mat-menu-item>
+      <button *ngIf="showToolBar" mat-menu-item (click)="onPerfil()">
         <mat-icon>person</mat-icon>
         <span>Perfil</span>
       </button>
 
-      <button *ngIf="showToolBar" mat-menu-item>
+      <button *ngIf="showToolBar" mat-menu-item (click)="onLogin()">
         <mat-icon>logout</mat-icon>
         <span>Logout</span>
       </button>
 
-      <button *ngIf="!showToolBar" mat-menu-item>
+      <button *ngIf="!showToolBar" mat-menu-item (click)="onLogin()">
         <mat-icon>login</mat-icon>
         <span>Login</span>
       </button>
