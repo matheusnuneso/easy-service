@@ -10,7 +10,7 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
 
   loginForm = this.formBuilder.group({
-    name: [''],
+    userName: [''],
     password: ['']
   });
 

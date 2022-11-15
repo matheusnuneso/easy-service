@@ -19,7 +19,7 @@ export class LoginService {
   ) { }
 
   userLogin(user: Partial<User>){
-    if (user.password == '123456') {
+    /*if (user.password == '123456') {
       this.userAuth = true;
       this.showToolBarEmitter.emit(true);
       this.router.navigate(['/home']);
@@ -27,7 +27,11 @@ export class LoginService {
     } else {
       this.showToolBarEmitter.emit(false);
       this.userAuth = false;
-    }
+    }*/
+
+    this.userAuth = true;
+    this.showToolBarEmitter.emit(true);
+    this.router.navigate(['/home']);
   }
 
   logout(){
