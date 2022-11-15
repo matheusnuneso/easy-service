@@ -1,4 +1,4 @@
-import { LoginService } from './auth/services/login.service';
+import { LoginService } from './services/login.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -19,5 +19,7 @@ export class AppComponent {
       show => this.showToolBar = show
     );
   }
+
+
 
 }

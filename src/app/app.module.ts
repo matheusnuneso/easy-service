@@ -1,5 +1,5 @@
 import { AuthGuard } from './guards/auth.guard';
-import { LoginService } from './auth/services/login.service';
+import { LoginService } from './services/login.service';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
