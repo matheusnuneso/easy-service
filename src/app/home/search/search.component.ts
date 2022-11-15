@@ -1,3 +1,5 @@
+import { User } from './../../models/user';
+import { ServiceService } from './../../services/service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceService: ServiceService) { }
 
   ngOnInit(): void {
   }
 
-  onSearch(searchWord: string){
-    console.log(searchWord);
+  onSearch(searchFilter: string){
+    this.serviceService.getServices(searchFilter).subscribe({
+      next: (r) => {console.log(r)}
+    })
   }
 
 }
