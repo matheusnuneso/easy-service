@@ -6,7 +6,7 @@ import { User } from '../models/user';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class JobService {
 
   private readonly APIurl = "/assets/services.json";
 
