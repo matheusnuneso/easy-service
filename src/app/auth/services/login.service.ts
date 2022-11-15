@@ -29,4 +29,8 @@ export class LoginService {
       this.userAuth = false;
     }
   }
+
+  getUserAuth(){
+    return this.userAuth;
+  }
 }
