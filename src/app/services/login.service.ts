@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../models/user';
+import { isEmpty, Observable } from 'rxjs';
+import { User } from './../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class LoginService {
 
   showToolBarEmitter = new EventEmitter<boolean>();
 
-  private readonly APIurl = "/assets/";
+  private readonly APIurl = "/assets/user.json";
 
   constructor(
     private httpClient: HttpClient,
@@ -29,9 +30,13 @@ export class LoginService {
       this.userAuth = false;
     }*/
 
-    this.userAuth = true;
-    this.showToolBarEmitter.emit(true);
-    this.router.navigate(['/home']);
+    this.httpClient.get<User>(this.APIurl, { observe: 'response' }).subscribe(data => {
+      console.log(data.status)
+      this.userAuth = true;
+      this.showToolBarEmitter.emit(true);
+      this.router.navigate(['/home', data.body?.id]);
+    })
+
   }
 
   logout(){

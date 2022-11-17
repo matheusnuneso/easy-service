@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  userId: string;
+  constructor(private actRoute: ActivatedRoute) {
+    this.userId = this.actRoute.snapshot.params['id'];
+  }
 
   ngOnInit(): void {
+    console.log(this.userId)
   }
 
 }
