@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobSigned } from './../../models/jobSigned';
+import { JobSignedService } from './../../services/job-signed.service';
 
 @Component({
   selector: 'app-job-signed',
@@ -10,13 +11,19 @@ export class JobSignedComponent implements OnInit {
 
   readonly displayedColumns = ['job', 'client', 'finalPrice'];
 
-  jobsSigned: JobSigned[] = [
-    {id: 1, idJob: 1, idClient:1, idProvider: 2, finalPrice: 99.99}
-  ];
+  jobsSigned: JobSigned[] = [];
 
-  constructor() { }
+  constructor(private jobSignedService: JobSignedService) {
+    this.filltable();
+  }
 
   ngOnInit(): void {
+  }
+
+  filltable(){
+    this.jobSignedService.getJobSigned().subscribe((data) => {
+      this.jobsSigned = data;
+    })
   }
 
 }
