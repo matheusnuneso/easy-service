@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "idJob": 1,
+    "finalPrice": 99.99,
+    "idClient": 1,
+    "idProvider": 2
+  },
+  {
+    "id": 2,
+    "idJob": 1,
+    "finalPrice": 99.99,
+    "idClient": 1,
+    "idProvider": 2
+  },
+  {
+    "id": 3,
+    "idJob": 1,
+    "finalPrice": 99.99,
+    "idClient": 1,
+    "idProvider": 2
+  }
+]
