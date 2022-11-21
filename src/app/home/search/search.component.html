@@ -4,7 +4,9 @@
     <input matInput #message maxlength="256" placeholder="Ex.: Eletricista">
   </mat-form-field>
 
-  <button mat-fab color="primary" (click)="onSearch(message.value)">
+  <button mat-fab color="primary"
+          (click)="onSearch(message.value)"
+          matTooltip="Pesquise com o campo vazio para ver todos os serviços disponíveis">
     <mat-icon>search</mat-icon>
   </button>
 </div>

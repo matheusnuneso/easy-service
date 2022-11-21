@@ -17,4 +17,8 @@ export class NavigationComponent implements OnInit {
     console.log(this.userId)
   }
 
+  onjob(){
+    console.log('aaaaaaaaa')
+  }
+
 }
