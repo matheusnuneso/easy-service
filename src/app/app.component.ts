@@ -1,6 +1,7 @@
+import { Location } from '@angular/common';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,34 +11,38 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'easy-service';
-
-  showToolBar : boolean = false;
+  showToolBar: boolean = false;
 
   constructor(
     private loginService: LoginService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private location: Location
+  ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.loginService.showToolBarEmitter.subscribe(
       show => this.showToolBar = show
     );
   }
 
-  onLogin(){
+  onLogin() {
     this.loginService.logout();
     this.router.navigate(['/login']);
   }
 
-  onPerfil(){
+  onHome() {
+    this.location.back();
+  }
+
+  onPerfil() {
     console.log('perfil');
   }
 
-  onContracts(){
+  onContracts() {
     console.log('contracts');
   }
 
-  onServices(){
+  onServices() {
     console.log('Services')
   }
 

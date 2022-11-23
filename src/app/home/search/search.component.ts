@@ -20,7 +20,6 @@ export class SearchComponent implements OnInit {
 
   onSearch(searchFilter: string){
     this.router.navigate(['jobs'], {relativeTo: this.actRoute})
-    console.log(this.actRoute.snapshot.params['id'])
   }
 
 }
