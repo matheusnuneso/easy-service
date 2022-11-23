@@ -1,3 +1,4 @@
+import { NavigationService } from './../../services/navigation.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,8 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   userId: string;
-  constructor(private actRoute: ActivatedRoute) {
+  selectedIndex: number = 0;
+
+  constructor(
+    private actRoute: ActivatedRoute,
+    private navigationServive: NavigationService
+  ) {
     this.userId = this.actRoute.snapshot.params['id'];
+    this.navigationServive.resultIndex$.subscribe(newIndex => this.selectedIndex = newIndex);
   }
 
   ngOnInit(): void {

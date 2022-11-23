@@ -1,3 +1,4 @@
+import { NavigationService } from './services/navigation.service';
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,8 +17,11 @@ export class AppComponent {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private location: Location
-  ) { }
+    private location: Location,
+    private navigationServive: NavigationService
+  ) {
+    this.navigationServive.updateIndexNavigation(0);
+  }
 
   ngOnInit() {
     this.loginService.showToolBarEmitter.subscribe(
@@ -39,11 +43,11 @@ export class AppComponent {
   }
 
   onContracts() {
-    console.log('contracts');
+    this.navigationServive.updateIndexNavigation(1);
   }
 
   onServices() {
-    console.log('Services')
+    console.log('service')
   }
 
 }
