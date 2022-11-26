@@ -7,7 +7,10 @@ const routes: Routes = [
 
   { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 
-  { path: 'home/:id', loadChildren: () => import('./home/home.module').then(m => m.HomeModule), canActivate: [AuthGuard] }
+  { path: 'home/:id', loadChildren: () => import('./home/home.module').then(m => m.HomeModule), canActivate: [AuthGuard] },
+  { path: 'user-data', loadChildren: () => import('./user-data/user-data.module').then(m => m.UserDataModule) },
+
+  { path: '**', pathMatch: 'full', redirectTo: 'login' }
 ];
 
 @NgModule({
