@@ -35,7 +35,9 @@ export class AppComponent {
   }
 
   onHome() {
-    this.location.back();
+    var id = this.navigationServive.getParamUrl(2);
+    this.router.navigate(['/home', id]);
+    this.navigationServive.updateIndexNavigation(0);
   }
 
   onPerfil() {
@@ -43,8 +45,7 @@ export class AppComponent {
   }
 
   onContracts() {
-    var id = this.navigationServive.getParamUrl(2);
-    this.router.navigate(['/home', id])
+    this.onHome();
     this.navigationServive.updateIndexNavigation(1);
   }
 
