@@ -1,6 +1,6 @@
-import { NavigationService } from './../../services/navigation.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NavigationService } from './../../services/navigation.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,6 +13,7 @@ export class NavigationComponent implements OnInit {
   selectedIndex: number = 0;
 
   constructor(
+    private router: Router,
     private actRoute: ActivatedRoute,
     private navigationServive: NavigationService
   ) {
@@ -21,7 +22,7 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.userId)
+    console.log(this.navigationServive.getParamUrl(2))
   }
 
   onjob(){

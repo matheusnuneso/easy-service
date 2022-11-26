@@ -1,8 +1,8 @@
-import { NavigationService } from './services/navigation.service';
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
+import { NavigationService } from './services/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -43,6 +43,8 @@ export class AppComponent {
   }
 
   onContracts() {
+    var id = this.navigationServive.getParamUrl(2);
+    this.router.navigate(['/home', id])
     this.navigationServive.updateIndexNavigation(1);
   }
 
