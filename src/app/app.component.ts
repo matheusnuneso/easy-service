@@ -41,7 +41,8 @@ export class AppComponent {
   }
 
   onPerfil() {
-    console.log('perfil');
+    var id = this.navigationServive.getParamUrl(2);
+    this.router.navigate(['/profile', id]);
   }
 
   onContracts() {

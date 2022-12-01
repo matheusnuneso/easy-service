@@ -3,5 +3,6 @@ export interface Person{
   fullName: string;
   email: string;
   cpf: string;
-  idUser: number;
+  userName: string;
+  password: string;
 }
