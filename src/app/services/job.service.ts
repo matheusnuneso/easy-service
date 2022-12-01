@@ -1,3 +1,4 @@
+import { Job } from './../models/job';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -12,7 +13,7 @@ export class JobService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getServices(filter: string) : Observable<User>{
-    return this.httpClient.get<User>(this.APIurl);
+  getServices() : Observable<Job[]>{
+    return this.httpClient.get<Job[]>(this.APIurl);
   }
 }
