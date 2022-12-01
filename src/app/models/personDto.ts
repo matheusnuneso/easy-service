@@ -1,5 +1,5 @@
 export interface PersonDto{
-  firstname: string;
+  firstName: string;
   lastName: string;
   email: string;
   cpf: string;

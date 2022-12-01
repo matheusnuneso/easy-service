@@ -29,7 +29,16 @@ export class ProfileComponent {
   ) {}
 
   ngOnInit(): void {
-
+    this.personService.getPersonPerfil(1).subscribe((data) => {
+      this.perfilForm.patchValue({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        cpf: data.cpf,
+        password: '',
+        confirmPassword: ''
+      })
+    })
   }
 
   onUpdate(){
