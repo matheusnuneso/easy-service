@@ -1,5 +1,6 @@
-import { Location } from '@angular/common';
+import { AddJobComponent } from './add-job/add-job.component';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { NavigationService } from './services/navigation.service';
@@ -17,8 +18,8 @@ export class AppComponent {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private location: Location,
-    private navigationServive: NavigationService
+    private navigationServive: NavigationService,
+    private dialog: MatDialog
   ) {
     this.navigationServive.updateIndexNavigation(0);
   }
@@ -54,8 +55,8 @@ export class AppComponent {
     console.log('service')
   }
 
-  addService() {
-
+  addJob() {
+    this.dialog.open(AddJobComponent, {width: '350px'});
   }
 
 }

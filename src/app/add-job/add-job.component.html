@@ -1,1 +1,27 @@
-<p>add-job works!</p>
+<h1 title mat-dialog-title>Nova Live</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="jobForm">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome da Live</mat-label>
+      <input matInput formControlName="userName" name="liveName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome do Canal</mat-label>
+      <input matInput formControlName="password" name="channelName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Link Completo</mat-label>
+      <input matInput formControlName="liveLink" name="liveLink">
+    </mat-form-field>
+
+
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createJob()">Salvar</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+</div>

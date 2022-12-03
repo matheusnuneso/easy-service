@@ -53,7 +53,7 @@
 </mat-toolbar>
 
 <mat-toolbar color="primary" class="footer">
-  <button *ngIf="showToolBar" style="position: fixed; right: 8px;" mat-raised-button color="accent" onclick="addService()"> <mat-icon>add</mat-icon> Serviço</button>
+  <button *ngIf="showToolBar" style="position: fixed; right: 8px;" mat-raised-button color="accent" (click)="addJob()"> <mat-icon>add</mat-icon> Serviço</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
