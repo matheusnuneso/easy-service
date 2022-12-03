@@ -54,4 +54,8 @@ export class AppComponent {
     console.log('service')
   }
 
+  addService() {
+
+  }
+
 }

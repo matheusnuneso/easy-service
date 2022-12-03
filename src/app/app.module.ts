@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AddJobComponent } from './add-job/add-job.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddJobComponent
   ],
   imports: [
     BrowserModule,
