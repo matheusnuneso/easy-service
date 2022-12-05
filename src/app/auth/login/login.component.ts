@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
 
   credentials: Credentials | undefined;
 
+  hide = true;
+
   constructor(
     private loginService: LoginService,
     private formBuilder: NonNullableFormBuilder
