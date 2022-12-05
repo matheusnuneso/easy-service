@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Credentials } from '../models/credentials';
 import { Person } from './../models/person';
-import { globalUrlApi } from '../global-variables'
+import { globalUrlApi } from '../global-variables';
 
 @Injectable({
   providedIn: 'root'
