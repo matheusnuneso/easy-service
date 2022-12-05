@@ -1,3 +1,4 @@
+import { Credentials } from './../../models/credentials';
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
@@ -14,6 +15,8 @@ export class LoginComponent implements OnInit {
     password: ['']
   });
 
+  credentials: Credentials | undefined;
+
   constructor(
     private loginService: LoginService,
     private formBuilder: NonNullableFormBuilder
@@ -22,7 +25,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   public onLogin(){
-    this.loginService.userLogin(this.loginForm.value);
+    this.credentials = {
+      userName: this.loginForm.value.userName,
+      password: this.loginForm.value.password
+    };
+
+    this.loginService.userLogin(this.credentials);
   }
 
 }
