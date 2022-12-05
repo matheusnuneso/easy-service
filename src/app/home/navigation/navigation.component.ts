@@ -15,14 +15,14 @@ export class NavigationComponent implements OnInit {
   constructor(
     private router: Router,
     private actRoute: ActivatedRoute,
-    private navigationServive: NavigationService
+    private navigationService: NavigationService
   ) {
     this.userId = this.actRoute.snapshot.params['id'];
-    this.navigationServive.resultIndex$.subscribe(newIndex => this.selectedIndex = newIndex);
+    this.navigationService.resultIndex$.subscribe(newIndex => this.selectedIndex = newIndex);
   }
 
   ngOnInit(): void {
-    console.log(this.navigationServive.getParamUrl(2))
+    console.log(this.navigationService.getParamUrl(2))
   }
 
   onjob(){
