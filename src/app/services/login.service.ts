@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Credentials } from '../models/credentials';
 import { Person } from './../models/person';
+import { globalUrlApi } from '../global-variables'
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class LoginService {
 
   showToolBarEmitter = new EventEmitter<boolean>();
 
-  private readonly APIurl = "http://localhost:8080/api/person/authPerson";
+  private readonly APIurl = `${globalUrlApi}person/authPerson`;
 
   constructor(
     private httpClient: HttpClient,
