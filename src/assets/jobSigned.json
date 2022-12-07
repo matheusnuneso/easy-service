@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "idJob": 1,
+    "idJob": "Eletricista",
     "finalPrice": 99.99,
-    "idClient": 1,
+    "idClient": "Geraldo",
     "idProvider": 2
   },
   {
-    "id": 2,
-    "idJob": 1,
+    "id": 1,
+    "idJob": "Eletricista",
     "finalPrice": 99.99,
-    "idClient": 1,
+    "idClient": "Geraldo",
     "idProvider": 2
   },
   {
-    "id": 3,
-    "idJob": 1,
+    "id": 1,
+    "idJob": "Eletricista",
     "finalPrice": 99.99,
-    "idClient": 1,
+    "idClient": "Geraldo",
     "idProvider": 2
   }
 ]
