@@ -27,7 +27,7 @@ export class AddJobComponent {
   }
 
   cancel(){
-
+    this.dialogRef.close();
   }
 
 }

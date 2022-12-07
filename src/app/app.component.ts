@@ -56,7 +56,7 @@ export class AppComponent {
   }
 
   addJob() {
-    this.dialog.open(AddJobComponent, {width: '350px'});
+    this.dialog.open(AddJobComponent, {width: '300px'});
   }
 
 }
